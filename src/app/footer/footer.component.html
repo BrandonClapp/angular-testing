@@ -1,0 +1,14 @@
+<div>
+  <div>{{ copyrightYear$ | async }}</div>
+  <div *ngIf="showSupportButton$ | async">
+    <button (click)="clickButton($event)">Support</button>
+  </div>
+
+  {{ buttonClicked$ | async | json }}
+
+  <hr />
+
+  <ul>
+    <li *ngFor="let message of messages$ | async">{{ message }}</li>
+  </ul>
+</div>
