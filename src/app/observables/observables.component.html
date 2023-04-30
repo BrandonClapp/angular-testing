@@ -8,7 +8,11 @@
 
   <hr />
 
-  <ul>
-    <li *ngFor="let message of messages$ | async">{{ message }}</li>
-  </ul>
+  <h2>All messages emitted</h2>
+
+  <div>Current: {{ messages$ | async | json }}</div>
+
+  <div *ngFor="let message of messagesArray$ | async">
+    {{ message }}
+  </div>
 </div>
