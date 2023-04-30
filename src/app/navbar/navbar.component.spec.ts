@@ -173,9 +173,8 @@ describe('NavbarComponent', () => {
 });
 
 /**
- * Testing injection tokens
+ * Testing injection tokens. Not really related to the navbar, but it's a good example of how to test injection tokens.
  */
-
 describe('NavbarComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
