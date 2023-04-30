@@ -197,6 +197,10 @@ describe('NavbarComponent', () => {
     expect(compiled.querySelector('.injected-token').textContent).toContain(
       'Hello Token'
     );
+
+    // We can also access the component instance and assert that the injected token is what we expect
+    const component = fixture.componentInstance;
+    expect(component.tokenValue).toBe('Hello Token');
   });
 
   it('allows for a custom value to be injected for injection token', () => {
@@ -214,5 +218,9 @@ describe('NavbarComponent', () => {
     expect(compiled.querySelector('.injected-token').textContent).toContain(
       'Goodbye Token'
     );
+
+    // We can also access the component instance and assert that the injected token is what we expect
+    const component = fixture.componentInstance;
+    expect(component.tokenValue).toBe('Goodbye Token');
   });
 });
