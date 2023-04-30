@@ -1,10 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { ObservablesModule } from './observables/observables.module';
+import { NavbarModule } from './navbar/navbar.module';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [AppComponent],
+      imports: [NavbarModule, ObservablesModule],
     }).compileComponents();
   });
 
