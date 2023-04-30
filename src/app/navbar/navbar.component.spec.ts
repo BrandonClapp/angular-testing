@@ -171,3 +171,49 @@ describe('NavbarComponent', () => {
     expect(compiled.querySelector('.my-app-navbar')).toBeFalsy();
   });
 });
+
+/**
+ * Testing injection tokens
+ */
+
+describe('NavbarComponent', () => {
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [NavbarComponent],
+      imports: [CommonModule],
+      providers: [],
+    }).compileComponents();
+  });
+
+  it('should inject a default value for injection token', () => {
+    // We createComponent here and store a local reference so that we don't compile the component at the scope
+    // that gets reused on _every_ test.
+
+    const fixture: ComponentFixture<NavbarComponent> =
+      TestBed.createComponent(NavbarComponent);
+
+    fixture.detectChanges();
+
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('.injected-token').textContent).toContain(
+      'Hello Token'
+    );
+  });
+
+  it('allows for a custom value to be injected for injection token', () => {
+    // Override the value of the injection token
+    // We cannot do this after invoking TestBed.createComponent(NavbarComponent);
+    // That is why we don't compile it in the beforeEach.
+    TestBed.overrideProvider('MY_INJECTION_TOKEN', {
+      useValue: 'Goodbye Token',
+    });
+
+    const fixture = TestBed.createComponent(NavbarComponent);
+    fixture.detectChanges();
+
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('.injected-token').textContent).toContain(
+      'Goodbye Token'
+    );
+  });
+});
