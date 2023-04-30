@@ -1,25 +1,16 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
-import {
-  BehaviorSubject,
-  Observable,
-  ReplaySubject,
-  Subject,
-  startWith,
-  take,
-  tap,
-  toArray,
-} from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject, Observable, ReplaySubject, Subject } from 'rxjs';
 
 /**
  * Experimenting with observable types
  */
 
 @Component({
-  selector: 'app-footer',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.css'],
+  selector: 'app-observables',
+  templateUrl: './observables.component.html',
+  styleUrls: ['./observables.component.css'],
 })
-export class FooterComponent implements OnInit {
+export class ObservablesComponent implements OnInit {
   // Observable is a representation of any set of values over any amount of time.
   // With the base Observable class, you cannot emit new values to subscribers,
   // instead, you would use a Subject or a sub-class of Subject.

@@ -3,11 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { NavbarModule } from './navbar/navbar.module';
-import { FooterModule } from './footer/footer.module';
+import { ObservablesModule } from './observables/observables.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, NavbarModule, FooterModule],
+  imports: [BrowserModule, NavbarModule, ObservablesModule],
   providers: [],
   bootstrap: [AppComponent],
 })
