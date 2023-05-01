@@ -53,7 +53,7 @@ describe('NavbarComponent', () => {
 
       const compiled = fixture.nativeElement;
 
-      // Assert that the navbar is visible
+      // Assert that the navbar is hidden
 
       expect(compiled.querySelector('.my-app-navbar')).toBeFalsy();
     });
