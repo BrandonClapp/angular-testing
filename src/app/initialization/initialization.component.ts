@@ -47,7 +47,7 @@ export class InitializationComponent implements OnInit {
     this.value4 = this.initializationService.getValue();
   }
 
-  constructor(public initializationService: InitializationService) {
+  constructor(private initializationService: InitializationService) {
     this.value5 = this.initializationService.getValue();
   }
 }

@@ -2,7 +2,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { InitializationComponent } from './initialization.component';
 import { InitializationService } from './initialization.service';
-import { firstValueFrom } from 'rxjs';
 
 describe('InitializationComponent', () => {
   let component: InitializationComponent;
