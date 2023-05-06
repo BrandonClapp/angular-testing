@@ -6,12 +6,15 @@ import { ObservablesComponent } from './observables/observables.component';
 import { NavbarModule } from './navbar/navbar.module';
 import { ObservablesModule } from './observables/observables.module';
 import { InitializationModule } from './initialization/initialization.module';
+import { CounterComponent } from './counter/counter.component';
+import { CounterModule } from './counter/counter.module';
 
 // sets up routes constant where you define your routes
 const routes: Routes = [
   { path: 'navbar', component: NavbarComponent },
   { path: 'initialization', component: InitializationComponent },
   { path: 'observables', component: ObservablesComponent },
+  { path: 'counter', component: CounterComponent },
 ];
 
 // configures NgModule imports and exports
@@ -21,6 +24,7 @@ const routes: Routes = [
     NavbarModule,
     ObservablesModule,
     InitializationModule,
+    CounterModule,
   ],
   exports: [RouterModule],
 })
