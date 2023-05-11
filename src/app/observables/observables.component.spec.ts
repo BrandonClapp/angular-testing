@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ObservablesComponent } from './observables.component';
-import { BehaviorSubject, ReplaySubject, Subject } from 'rxjs';
+import { BehaviorSubject, ReplaySubject, Subject, of } from 'rxjs';
 
 describe('ObservablesComponent', () => {
   let component: ObservablesComponent;
@@ -148,5 +148,14 @@ describe('ObservablesComponent', () => {
     });
 
     subject.next('forty-two');
+  });
+
+  it('An observable should allow a subscription within a test', (done) => {
+    const obs = of(42);
+
+    obs.subscribe((value) => {
+      expect(value).toEqual(42);
+      done();
+    });
   });
 });
